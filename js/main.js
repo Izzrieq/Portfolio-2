@@ -1,13 +1,21 @@
-/* -------------------------------------------
+let currentYear = new Date().getFullYear();
+    let count = 7;
 
-Name: 		Arter
-Version:  1.0
-Author:		Nazar Miller (millerDigitalDesign)
-Portfolio:  https://themeforest.net/user/millerdigitaldesign/portfolio?ref=MillerDigitalDesign
+    function startCount() {
+      const counterElement = document.getElementById('counter');
+      counterElement.innerText = count;
 
-p.s. I am available for Freelance hire (UI design, web development). mail: miller.themes@gmail.com
+      setInterval(() => {
+        const newYear = new Date().getFullYear();
+        if (newYear > currentYear) {
+          count++;
+          currentYear = newYear;
+          counterElement.innerText = count;
+        }
+      }, 1000); // Check every second for a change in the year
+    }
 
-------------------------------------------- */
+    startCount();
 $(function() {
 
   "use strict";
